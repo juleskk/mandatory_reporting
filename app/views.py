@@ -1,6 +1,6 @@
 from app import app,db
 from flask import render_template, g, url_for, request,redirect
-from app.model import Entries
+from app.models import Entries
 
 @app.route("/index",methods=["GET","POST"])
 @app.route("/",methods=["GET","POST"])
