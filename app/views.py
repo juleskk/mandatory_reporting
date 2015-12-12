@@ -12,6 +12,10 @@ def show_entries():
     entries = [elem.title for elem in Entries.query.all()]
     return render_template("show_entries.html",entries=entries)
 
+@app.route("/add_entries",methods=["GET","POST"])
+def add_entries():
+    return render_template("add_entries.html")
+
 @app.route("/add",methods=["POST"])
 def add_entry():
     title = request.form.get("title")
