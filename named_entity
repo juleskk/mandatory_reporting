@@ -1,0 +1,20 @@
+from nltk.tag.stanford import NERTagger
+from nltk.tokenize import word_tokenize
+import nltk, re, pprint
+
+
+names = nltk.corpus.names
+names.fileids()
+male_names = names.words('male.txt')
+female_names = names.words('female.txt')
+
+# way 1
+def redact(text):
+    redacted = []
+    # strips some names...
+    for each in st.tag(text.split()):
+        redacted.append(x for x in each if x[1] != 'PERSON')
+
+# way 2        
+names = male_names + female_names
+[x for x in text if x not in names]
